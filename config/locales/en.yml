@@ -20,4 +20,23 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  layouts:
+    application:
+      crawler: Crawler
+    header:
+      home: Home
+      help: Help
+      log_in: Log in
+    footer:
+      rooms_crawler: Room crawler
+      about: About
+      contact: Contact
+  static_pages:
+    about:
+      about: About
+      about_us: Software Architecture Design - Assignment 2
+      group_members: "Group members:"
+    home:
+      home: Home
+      welcome: Welcome to rooms crawler site!
+
