@@ -18,12 +18,13 @@ class Room
   field :description, type: String
   field :price_per_metre_square, type: String
   field :price, type: String
-  field :images, type: String
+  field :images, type: Array
   field :city, type: String
   field :district, type: String
-  field :provider_site, type: Integer
   field :code, type: String
   field :provider_url, type: String
 
   as_enum :provider_site, ["muabannhadat.vn", "nhadat24h.net"]
+
+  validates :code, presence: true
 end

@@ -37,6 +37,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'mongoid', '~> 6.1'
 gem 'simple_enum'
+gem 'mechanize'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
