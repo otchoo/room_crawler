@@ -34,7 +34,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem "bootstrap-sass"
 gem 'mongoid', '~> 6.1'
 gem 'simple_enum'
 gem 'mechanize'
