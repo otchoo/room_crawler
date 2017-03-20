@@ -11,14 +11,38 @@ class CrawlRoomsFromMuabannhadatService
   end
 
   def perform
+    crawled_rooms = 0
+    logger = Logger.new "#{Rails.root}/log/crawling_#{Rails.env}.log"
+    logger.info "Crawling rooms on #{pages_number} pages from '#{ROOT_URL}'"
     agent = Mechanize.new
     (0...pages_number).each do |page_number|
       url = BASE_URL + "?p=#{page_number}"
-      page = agent.get url
-      page.links_with(class: "title-filter-link").each do|link|
-        crawl_room ROOT_URL + link.uri.to_s
+      begin
+        logger.info "---Crawling page #{url} for get list rooms"
+        page = agent.get url
+        logger.info "---Crawled page #{url}"
+        page.links_with(class: "title-filter-link").each do |link|
+          room_url = ROOT_URL + link.uri.to_s
+          begin
+            logger.info "------Crawling room detail from #{room_url}"
+            if crawl_room(room_url)
+              logger.info "------Crawled room detail from #{room_url}"
+              crawled_rooms += 1
+            else
+              logger.error "------Fail to crawl room detail from #{room_url}"
+            end
+          rescue => e
+            logger.error e.message
+            e.backtrace.each {|line| logger.error line}
+          end
+        end
+      rescue => e
+        logger.error e.message
+        e.backtrace.each {|line| logger.error line}
       end
     end
+    logger.info "Crawled #{crawled_rooms} room(s) on #{pages_number} pages from '#{ROOT_URL}'\n\n"
+    logger.close
   end
 
   private
