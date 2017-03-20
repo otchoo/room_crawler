@@ -25,3 +25,9 @@
     opacity: 0.2;
   }
 }
+
+.cover-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}

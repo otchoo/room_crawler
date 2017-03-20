@@ -1,0 +1,17 @@
+<div class="col-md-6 col-md-offset-3">
+  <%= search_form_for search do |f| %>
+    <p><%= f.select :provider_site_cd_eq,
+      options_for_select(Room.provider_sites.hash, params.dig(:q, :provider_site_cd_eq)),
+      {include_blank: t(".select_provider")}, {class: "form-control", placeholder: t(".code_place_holder")} %></p>
+    <p><%= f.search_field :code_cont, value: params.dig(:q, :code_cont),
+      class: "form-control", placeholder: t(".code_place_holder") %>
+    </p>
+    <p><%= f.search_field :city_or_district_cont, value: params.dig(:q, :city_or_district_cont),
+      class: "form-control", placeholder: t(".city_place_holder") %></p>
+    <p><%= f.search_field :area_cont, value: params.dig(:q, :area_cont),
+      class: "form-control", placeholder: t(".area_place_holder") %></p>
+    <p><%= f.search_field :price_cont, value: params.dig(:q, :price_cont),
+      class: "form-control", placeholder: t(".price_cont_place_holder") %></p>
+    <%= f.submit t(".search"), class: "btn btn-primary pull-right" %>
+  <% end %>
+</div>

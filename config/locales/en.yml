@@ -27,6 +27,8 @@ en:
       home: Home
       help: Help
       log_in: Log in
+      rooms: Rooms
+      crawler: Crawler
     footer:
       rooms_crawler: Rooms crawler
       about: About
@@ -47,6 +49,9 @@ en:
       code: Code
       city: City
       address: Address
+      area: Area
+      price: Price
+      district: District
     show:
       room_detail: Room detail
       code: Code
@@ -65,4 +70,12 @@ en:
       description: Description
       price_per_metre_square: Price per metre square
       price: Price
+    search:
+      code_place_holder: Enter code
+      city_place_holder: Enter city or disctrict
+      address_place_holder: Enter address
+      area_place_holder: Enter area
+      price_cont_place_holder: Enter price
+      select_provider: Select provider
+      search: Search
 
