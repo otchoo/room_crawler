@@ -1,18 +1,18 @@
 class CrawlRoomsFromMuabannhadatService
 
   BASE_URL = "http://www.muabannhadat.vn/nha-dat-3490"
-  ROOM_SELECTOR_REGEX = /\AMainContent_ctlList_ctlResults_repList_ctl00_\d+_divListingInformationTitle_\d+/
   ROOT_URL = "http://www.muabannhadat.vn"
+  DEFAULT_PAGES_NUMBER = 10
 
-  attr_reader :pages_count
+  attr_reader :pages_number
 
-  def initialize pages_count = 10
-    @pages_count = pages_count
+  def initialize pages_number = DEFAULT_PAGES_NUMBER
+    @pages_number = pages_number
   end
 
   def perform
     agent = Mechanize.new
-    (0...pages_count).each do |page_number|
+    (0...pages_number).each do |page_number|
       url = BASE_URL + "?p=#{page_number}"
       page = agent.get url
       page.links_with(class: "title-filter-link").each do|link|

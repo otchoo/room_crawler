@@ -1,6 +1,7 @@
 class Crawlers::RoomFromMuabannhadat
   CRAWLED_ATTRIBUTES = %i"area address direction number_of_bedrooms number_of_bathrooms project
     floor utilities environment description price images city district code"
+  SITE_NAME = "muabannhadat.vn"
 
   attr_reader :url
 
@@ -10,8 +11,8 @@ class Crawlers::RoomFromMuabannhadat
 
   def crawled_params
     CRAWLED_ATTRIBUTES.inject({}) do |params, attribute|
-      params.merge(attribute => send("crawled_#{attribute}"))
-    end.merge provider_url: crawled_page.uri.to_s, provider_site_cd: Room::provider_sites["muabannhadat.vn"]
+      params.merge attribute => send("crawled_#{attribute}")
+    end.merge provider_url: crawled_page.uri.to_s, provider_site_cd: Room::provider_sites[SITE_NAME]
   end
 
   private
@@ -57,14 +58,14 @@ class Crawlers::RoomFromMuabannhadat
   end
 
   def crawled_utilities
-    @crawled_utilities ||= if utilities_element = crawled_page.at("#MainContent_ctlDetailBox_lblUtility")
-      utilities_element.inner_html.gsub "<br>", ","
+    @crawled_utilities ||= if original_utilities = crawled_page.at("#MainContent_ctlDetailBox_lblUtility").try(:inner_html)
+      original_utilities.split("<br>").map{|utility| utility.strip}.join ", "
     end
   end
 
   def crawled_environment
-    @crawled_environment ||= if environment = crawled_page.at("#MainContent_ctlDetailBox_lblEnvironment")
-      environment.inner_html.gsub "<br>", ","
+    @crawled_environment ||= if original_env = crawled_page.at("#MainContent_ctlDetailBox_lblEnvironment").try(:inner_html)
+      original_env.split("<br>").map{|env| env.strip}.join ", "
     end
   end
 
@@ -77,11 +78,8 @@ class Crawlers::RoomFromMuabannhadat
   end
 
   def crawled_images
-    @crawled_images ||= if image_elements = crawled_page.search(".flexslider li a")
-      image_elements.inject([]) do |list_images, element|
-        list_images.push element.attributes["href"].try(:value)
-      end.compact
-    end
+    @crawled_images ||= crawled_page.search(".flexslider li a")
+      .map{|element| element.attributes["href"].try :value}.compact
   end
 
   def crawled_city
