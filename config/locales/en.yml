@@ -28,7 +28,7 @@ en:
       help: Help
       log_in: Log in
     footer:
-      rooms_crawler: Room crawler
+      rooms_crawler: Rooms crawler
       about: About
       contact: Contact
   static_pages:
@@ -39,4 +39,30 @@ en:
     home:
       home: Home
       welcome: Welcome to rooms crawler site!
+  rooms:
+    index:
+      room_list: Room list
+      id: ID
+      name_site: Name site
+      code: Code
+      city: City
+      address: Address
+    show:
+      room_detail: Room detail
+      code: Code
+      city: City
+      district: District
+      address: Address
+      direction: Direction
+      project: Project
+      room_number: Room number
+      area: Area
+      floor: Floor
+      number_of_bedrooms: Number of bedrooms
+      number_of_bathrooms: Number of bathrooms
+      utilities: Utilities
+      environment: Environment
+      description: Description
+      price_per_metre_square: Price per metre square
+      price: Price
 

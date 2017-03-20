@@ -1,0 +1,7 @@
+<tr>
+  <td><%= index_for room_counter, @rooms.current_page, Settings.rooms.page_size %></td>
+  <td><%= link_to room.provider_site, room.provider_url %></td>
+  <td><%= link_to room.code, room %></td>
+  <td><%= room.city %></td>
+  <td><%= room.address %></td>
+</tr>

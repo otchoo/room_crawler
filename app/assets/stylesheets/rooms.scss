@@ -1,0 +1,27 @@
+.list-photos {
+  position: relative;
+  margin: 5px 0;
+
+  .other-photo {
+    position: absolute;
+    right: 12%;
+    bottom: 30px;
+  }
+
+  a {
+    margin-left: 4px;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  .list-photo-item {
+    object-fit: cover;
+    width: 24%;
+    height: 100px;
+  }
+
+  .last-item {
+    opacity: 0.2;
+  }
+}
