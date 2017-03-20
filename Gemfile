@@ -41,6 +41,9 @@ gem "mechanize"
 gem "settingslogic"
 gem "kaminari"
 gem "kaminari-mongoid"
+gem "ransack_mongo"
+gem "ransack", github: "Zhomart/ransack", branch: "mongoid"
+
 group :development, :test do
   # Call "byebug" anywhere in the code to stop execution and get a debugger console
   gem "byebug", platform: :mri

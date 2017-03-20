@@ -1,7 +1,7 @@
-<div class="col-md-12 text-center"><%= image_tag room.images[0]%></div>
+<div class="col-md-12 text-center"><%= image_tag images[0], class: "cover-image" %></div>
 <div class="col-md-12">
   <br>
 </div>
 <div class="list-photos">
-    <%= render partial: "photos", collection: room.images, as: :photo %>
+    <%= render partial: "photos", collection: images, as: :photo %>
 </div>

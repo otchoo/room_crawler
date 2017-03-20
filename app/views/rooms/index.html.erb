@@ -1,14 +1,19 @@
 <div class="row">
   <div class="col-md-12">
     <h2 class="text-center"><%= t ".room_list"%></h2>
+    <hr>
+    <%= render "search", search: @search %>
+    <div class="col-md-12"><hr></div>
     <table class="table table-hover table-bordered">
       <thead>
         <tr>
           <th><%= t ".id" %></th>
-          <th><%= t ".name_site" %></th>
-          <th><%= t ".code" %></th>
-          <th><%= t ".city" %></th>
-          <th><%= t ".address" %></th>
+          <th class="col-md-2"><%= t ".name_site" %></th>
+          <th class="col-md-2"><%= t ".code" %></th>
+          <th class="col-md-2"><%= t ".city" %></th>
+          <th class="col-md-2"><%= t ".district" %></th>
+          <th class="col-md-2"><%= t ".area" %></th>
+          <th class="col-md-2"><%= t ".price" %></th>
         </tr>
       </thead>
       <tbody>
