@@ -1,5 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Questrial);
-@import url(http://fonts.googleapis.com/css?family=Dancing+Script:700);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab);
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -11,7 +10,7 @@ html, body{
 $gray-medium-light: #eaeaea;
 
 body{
-  font-family: "Roboto Slab", sans-serif;
+  font-family: "Roboto Slab", serif;
   padding-top: 60px;
 }
 
@@ -38,32 +37,9 @@ a{
   }
 }
 
-
 h1, h2, h3, h4, h5, h6{
-  font-family: "Roboto Slab", sans-serif;
+  font-family: "Roboto Slab", serif;
   line-height: 1;
-}
-
-h1{
-  font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-h2{
-  font-size: 1.2em;
-  letter-spacing: -1px;
-  margin-bottom: 30px;
-  text-align: center;
-  font-weight: normal;
-  color: $gray-light;
-}
-
-p{
-  font-size: 17px;
-  line-height: 1.7;
-  margin-bottom: 20px;
 }
 
 section{
@@ -87,10 +63,11 @@ aside{
 }
 
 footer{
-  margin-top: 350px;
-  padding-top: 5px;
+  margin-top: 100px;
+  padding-top: 10px;
   border-top: 1px solid $gray-medium-light;
   color: $gray-light;
+  font-size: 15px;
   a{
     color: $gray;
     &:hover{
@@ -175,4 +152,12 @@ header .header-content .inner p{
 
 .maT35{
   margin-top: 35px;
+}
+
+.table tbody>tr>th {
+  vertical-align: middle;
+}
+
+.container-body {
+  min-height: 500px;
 }

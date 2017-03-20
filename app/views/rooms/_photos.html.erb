@@ -1,0 +1,14 @@
+<% if photo_counter > Settings.rooms.image_number %>
+  <%= link_to image_path(photo), class: "hidden" do %>
+    <%= image_tag photo, class: "list-photo-item" %>
+  <% end %>
+<% else %>
+  <%= link_to image_path(photo) do %>
+    <% if photo_counter == Settings.rooms.image_number %>
+      <%= image_tag photo, class: "list-photo-item last-item" %>
+      <span class="other-photo"><%= "(+#{@room.images.size - Settings.rooms.image_number})" %></span>
+    <% else %>
+      <%= image_tag photo, class: "list-photo-item" %>
+    <% end %>
+  <% end %>
+<% end %>

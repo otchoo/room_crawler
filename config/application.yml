@@ -1,0 +1,13 @@
+defaults: &defaults
+  about_page_url: /about
+  rooms:
+    page_size: 10
+    image_number: 3
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

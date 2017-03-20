@@ -1,0 +1,79 @@
+<div class="row">
+  <div class="col-md-12">
+    <h2 class="text-center"><%= t ".room_detail"%></h2>
+    <div class="room-photos"><%= render "list_photos", room: @room %></div>
+    <hr>
+    <table class="table table-hover table-bordered">
+      <tbody>
+        <tr>
+          <th class="col-md-3"><%= t ".code" %></th>
+          <td><%= @room.code %></td>
+        </tr>
+        <tr>
+          <th><%= t ".city" %></th>
+          <td><%= @room.city %></td>
+        </tr>
+        <tr>
+          <th><%= t ".district" %></th>
+          <td><%= @room.district %></td>
+        </tr>
+        <tr>
+          <th><%= t ".address" %></th>
+          <td><%= @room.address %></td>
+        </tr>
+        <tr>
+          <th><%= t ".direction" %></th>
+          <td><%= @room.direction %></td>
+        </tr>
+        <tr>
+          <th><%= t ".project" %></th>
+          <td><%= @room.project %></td>
+        </tr>
+        <tr>
+          <th><%= t ".room_number" %></th>
+          <td><%= @room.room_number %></td>
+        </tr>
+        <tr>
+          <th><%= t ".area" %></th>
+          <td><%= @room.area %></td>
+        </tr>
+        <tr>
+          <th><%= t ".floor" %></th>
+          <td><%= @room.floor %></td>
+        </tr>
+        <tr>
+          <th><%= t ".number_of_bedrooms" %></th>
+          <td><%= @room.number_of_bedrooms %></td>
+        </tr>
+        <tr>
+          <th><%= t ".number_of_bathrooms" %></th>
+          <td><%= @room.number_of_bathrooms %></td>
+        </tr>
+        <tr>
+          <th><%= t ".utilities" %></th>
+          <td><%= @room.utilities %></td>
+        </tr>
+        <tr>
+          <th><%= t ".environment" %></th>
+          <td><%= @room.environment %></td>
+        </tr>
+        <tr>
+          <th><%= t ".description" %></th>
+          <td><%= @room.description.html_safe %></td>
+        </tr>
+        <tr>
+          <th><%= t ".price_per_metre_square" %></th>
+          <td><%= @room.price_per_metre_square %></td>
+        </tr>
+        <tr>
+          <th><%= t ".price" %></th>
+          <td><%= @room.price %></td>
+        </tr>
+        <tr>
+          <th><%= t ".source" %></th>
+          <td><%= link_to nil, @room.provider_url %></td>
+        </tr>
+      <tbody>
+    </table>
+  </div>
+</div>
