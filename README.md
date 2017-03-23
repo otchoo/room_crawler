@@ -1,24 +1,68 @@
-# README
+# Room crawler
+Room Crawler System has core function is crawl rooms information form 2 sites “muabannhadat.vn” & “nhadat24h.net” and possible to extend more sites. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The system helps people get huge collection of data about rooms which is selling or renting from some website. 
 
-Things you may want to cover:
+Technology used in project: 
++ Ruby on Rails, HTML5/CSS3, Boostrap 
++ [Mechanize](https://github.com/sparklemotion/mechanize) & [Nokogiri](https://github.com/sparklemotion/nokogiri) gem (lib) 
++ MongoDB 
++ Github for sub-version control 
 
-* Ruby version
+## Getting started
+Setup development environment:
++ [Ruby 2.4](https://www.ruby-lang.org/en/documentation/installation)
++ [Git 1.9](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
++ [Rails 5.0](https://gorails.com/setup/ubuntu/16.04)
++ [MongoDB 2.6](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu)
 
-* System dependencies
+## Usage
 
-* Configuration
+### Setup local environment variable
+Setup account basic authentication:
+```ruby
+#config/local_env.yml
 
-* Database creation
+BASIC_AUTHEN_USERNAME: username
+BASIC_AUTHEN_PASSWORD: password 
+```
 
-* Database initialization
+### Setup gem file
+```
+bundle install
+```
+Bundler will connect to https://rubygems.org (and any other sources that you declared), and find a list of all of the required gems that meet the requirements you specified
 
-* How to run the test suite
+### Crawling
 
-* Services (job queues, cache servers, search engines, etc.)
+Go to terminal, run below command to crawl rooms from external sites:
 
-* Deployment instructions
+```ruby
+#crawl rooms from muabannhadat.vn
+rake crawler:rooms:crawl_from_muabannhadat
 
-* ...
+#crawl rooms nhadat24h.net
+rake crawler:rooms:crawl_from_nhadat24h
+```
+
+Check ```log/crawling_development.log``` for crawling log
+
+### Start server
+Start the web server.
+In rails 5.0, by default [Puma](https://github.com/puma/puma) is used for web server
+```
+rails server
+```
+
+### View
+List room view: http://localhost:3000/rooms
+
+Room detail view: http://localhost:3000/rooms/ [:room_id]
+
+### Searching
+Search room with any of 5 conditions:
++ provider site
++ code
++ city or distric or address
++ area
++ price
