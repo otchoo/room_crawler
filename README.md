@@ -27,6 +27,11 @@ BASIC_AUTHEN_USERNAME: username
 BASIC_AUTHEN_PASSWORD: password 
 ```
 
+### Setup gem file
+```
+bundle install
+```
+
 ### Crawling
 
 Go to terminal, run below command:
