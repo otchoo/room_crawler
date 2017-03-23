@@ -31,11 +31,11 @@ BASIC_AUTHEN_PASSWORD: password
 ```
 bundle install
 ```
-Bundler will connect to rubygems.org (and any other sources that you declared), and find a list of all of the required gems that meet the requirements you specified
+Bundler will connect to https://rubygems.org (and any other sources that you declared), and find a list of all of the required gems that meet the requirements you specified
 
 ### Crawling
 
-Go to terminal, run below command:
+Go to terminal, run below command to crawl rooms from external sites:
 
 ```ruby
 #crawl rooms from muabannhadat.vn
@@ -48,6 +48,8 @@ rake crawler:rooms:crawl_from_nhadat24h
 Check ```log/crawling_development.log``` for crawling log
 
 ### Start server
+Start the web server.
+In rails 5.0, by default [Puma](https://github.com/puma/puma) is used for web server
 ```
 rails server
 ```
