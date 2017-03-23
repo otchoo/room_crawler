@@ -41,6 +41,11 @@ rake crawler:rooms:crawl_from_nhadat24h
 
 Check ```log/crawling_development.log``` for crawling log
 
+### Start server
+```
+rails server
+```
+
 ### View
 List room view: http://localhost:3000/rooms
 
