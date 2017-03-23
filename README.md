@@ -31,6 +31,7 @@ BASIC_AUTHEN_PASSWORD: password
 ```
 bundle install
 ```
+Bundler will connect to rubygems.org (and any other sources that you declared), and find a list of all of the required gems that meet the requirements you specified
 
 ### Crawling
 
